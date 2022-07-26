@@ -10,7 +10,7 @@
   align-items: center;
   z-index: 999;
   overflow: hidden;
-  margin-top: -20px;
+  margin-top: -2rem;
 }
 
 .poster {
@@ -30,8 +30,9 @@
   color: #fff;
   display: flex;
   flex-direction: column;
-  padding: 0 2rem;
   gap: 1rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 
 .layer {
