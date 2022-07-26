@@ -18,8 +18,6 @@ function Home() {
 
   dispatch(title(data?.title || data?.original_title));
 
-  console.log(res);
-  console.log(data);
   return (
     <>
       <div

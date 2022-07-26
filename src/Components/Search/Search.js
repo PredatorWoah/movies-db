@@ -14,10 +14,10 @@ function Search() {
   const [show, setShow] = useState(false);
 
   const { data } = useGetSearchQuery(searchh);
-  console.log(data);
+
 
   const results = data?.results;
-  console.log(results);
+
 
   const queryHanlder = (e) => {
     setQuery(e.target.value);

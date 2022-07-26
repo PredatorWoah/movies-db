@@ -26,7 +26,7 @@
 .info {
   flex: 1;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.1);
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -154,11 +154,16 @@
   .home .grid{
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     padding-right: 2rem;
+    column-gap: 6rem;
 
   }
 
   .grid__box p{
     font-size: 18px;
+  }
+
+  .App .fork{
+    display: none
   }
 
 }
@@ -170,9 +175,15 @@
   }
 }
 
+@media (max-width:319px) {
+  .home .grid{
+    column-gap: 3rem;
+  }
+}
+
 .fork{
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 1100;
+  z-index: 100;
 }
