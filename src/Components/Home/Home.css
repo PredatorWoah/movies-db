@@ -48,7 +48,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
@@ -120,7 +120,7 @@
   }
 
   .layer_2{
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(0, 0, 0, 0.6);
   }
 
   .poster {
@@ -168,4 +168,11 @@
   .home .grid{
     padding-right: 5px;
   }
+}
+
+.fork{
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1100;
 }

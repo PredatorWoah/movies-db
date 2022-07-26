@@ -1,7 +1,7 @@
 .search{
     width: 100%;
     max-width: 1000px;
-    border-bottom: 1px solid #fff;
+    border-bottom: 2px solid #fff;
     display: flex;
     align-items: center;
     gap: 4px;
@@ -20,7 +20,18 @@
     font-family: Montserrat;
     font-size: 16px;
     background: none;
-    color: #fff;
+    color: rgb(189, 189, 189);
+}
+
+.search input::placeholder{
+    color: rgb(189, 189, 189);
+}
+
+.search .MuiSvgIcon-root{
+    color: rgb(189, 189, 189);
+}
+.search:focus{
+    border-bottom: 2px solid #01D277;
 }
 
 .search__results{
@@ -59,6 +70,7 @@
 
 .search__show{
     display: block;
+    transition: .4s;
 }
 
 @media (max-width:895px) {

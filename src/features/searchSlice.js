@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  search: "Avengers: Endgame",
+  search: "",
 };
 
 export const searchSlice = createSlice({

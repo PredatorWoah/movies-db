@@ -10,6 +10,7 @@ function Search() {
   const [query, setQuery] = useState("");
   const dispatch = useDispatch();
   const searchh = useSelector((state) => state.search.search);
+  const title = useSelector((state) => state.title.title)
   const [show, setShow] = useState(false);
 
   const { data } = useGetSearchQuery(searchh);
@@ -30,7 +31,7 @@ function Search() {
         <SearchIcon />
         <input
           type="text"
-          placeholder="Search"
+          placeholder={title ? `${title}` : 'Search Movie Title'}
           maxLength="50"
           value={query}
           onChange={(e) => queryHanlder(e)}
@@ -46,6 +47,7 @@ function Search() {
                 onClick={() => {
                   dispatch(id(data?.id));
                   setShow(false);
+                  setQuery('')
                 }}
               >
                 <span>{data?.original_title || data?.title}</span>

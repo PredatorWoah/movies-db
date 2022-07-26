@@ -5,25 +5,12 @@
     flex-direction: column;
     height: 100vh;
     gap: 2rem;
-    background: #000;
 }
 
 @media (max-width:995px) {
     .App{
         height: auto;
-        margin-top: 2rem;
+        margin-top: 3rem;
     }
 }
 
-.credit{
-    color: #fff;
-    font-weight: 700;
-    font-size: 16px;
-
-}
-
-.credit span a{
-    color: #01d277;
-    font-size: 20px;
-    text-decoration: none;
-}

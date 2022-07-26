@@ -4,10 +4,13 @@ body {
   margin: 0;
   font-family: Lato,sans-serif;
   padding: 0;
+  background: #000;
+  transition: .4s;
 }
 
 html{
   overflow-x: hidden;
+  transition: .4s;
 }
 
 ::-webkit-scrollbar{

@@ -12,9 +12,6 @@ function App() {
   return <div className="App">
   <Search />
   <Home />
-  <div className="credit">
-    <h3>Made By ❤️<span><a href="https://github.com/therogersak" target="_blank">Rogers@k</a></span></h3>
-  </div>
   </div>;
 }
 

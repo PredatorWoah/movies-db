@@ -3,14 +3,14 @@ import { setupListeners } from "@reduxjs/toolkit/query";
 import searchReducer from "../features/searchSlice";
 import { moviesApi } from "../features/Api";
 import idReducer from "../features/idSlice";
-import buttonReducer from '../features/buttonSlice'
+import titleReducer from "../features/titleSlice";
 
 export const store = configureStore({
   reducer: {
     [moviesApi.reducerPath]: moviesApi.reducer,
     search: searchReducer,
     id: idReducer,
-    button:buttonReducer
+    title: titleReducer,
   },
 
   middleware: (getDefaultMiddleware) =>
