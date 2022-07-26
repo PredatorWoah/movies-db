@@ -1,0 +1,171 @@
+.home {
+  width: 100%;
+  max-width: 1000px;
+  background: rgba(0, 0, 0, 0.5);
+  height: 80vh;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  z-index: 999;
+  overflow: hidden;
+  margin-top: -20px;
+}
+
+.poster {
+  width: 400px;
+  height: 100%;
+}
+
+.poster img {
+  width: 100%;
+  height: 100%;
+}
+
+.info {
+  flex: 1;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem;
+  gap: 1rem;
+}
+
+.layer {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.layer_2 {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.tagline {
+  color: #01d277;
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.grid__box p {
+  color: #01d277;
+  font-size: 20px;
+  margin: 0;
+  margin-top: 2px;
+}
+
+.grid__box span {
+  font-size: 14px;
+}
+
+.title h3 {
+  font-size: 2.2em;
+  margin: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.overview p {
+  line-height: 25px;
+  font-size: 16px;
+  margin: 0;
+}
+
+.genres {
+  color: #01d277;
+  font-size: 20px;
+  margin: 5px 0;
+}
+
+.production__companies {
+  font-size: 16px;
+}
+
+.info__top {
+  margin-top: 2rem;
+}
+
+@media (max-width: 895px) {
+  .home {
+    flex-direction: column-reverse;
+    width: 100%;
+    height: auto;
+    background: none;
+  }
+
+  .home .info {
+    height: auto;
+    width: 100%;
+    max-width: 95%;
+    background: none;
+    padding-bottom: 2rem;
+  }
+
+  .layer_2{
+    background: rgba(0, 0, 0, 0.95);
+  }
+
+  .poster {
+    width: 100%;
+    height: auto;
+  }
+
+  .info .grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+  }
+
+  .genres {
+    font-size: 18px;
+  }
+
+  .production__companies {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 500px) {
+  .overview p {
+    font-size: 15px;
+  }
+
+  .title h3 {
+    font-size: 1.6em;
+  }
+
+  .home .grid{
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    padding-right: 2rem;
+
+  }
+
+  .grid__box p{
+    font-size: 18px;
+  }
+
+}
+
+
+@media (max-width:350px) {
+  .home .grid{
+    padding-right: 5px;
+  }
+}
