@@ -7,10 +7,10 @@
     gap: 2rem;
 }
 
-@media (max-width:995px) {
+@media (max-width:895px) {
     .App{
         height: auto;
-        background: rgba(0, 0, 0, 0.40);
+        background: rgba(0, 0, 0, 0.70);
     }
 }
 
