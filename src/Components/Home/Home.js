@@ -5,18 +5,38 @@ import Poster from "./Poster/Poster";
 import { useSelector, useDispatch } from "react-redux";
 import { useGetByIdQuery, useGetTrendingQuery } from "../../features/Api";
 import { title } from "../../features/titleSlice";
+import { id } from "../../features/idSlice";
 const base_url = "https://image.tmdb.org/t/p/original";
 
 function Home() {
-  const id = useSelector((state) => state.id.id);
+  const idd = useSelector((state) => state.id.id);
+  const type = useSelector((state) => state.type.type);
+  console.log(type);
 
-  const { data } = useGetByIdQuery(id);
-  const result = useGetTrendingQuery();
+  const info = {
+    type: type,
+    id: idd,
+  };
+
+  const results = useGetTrendingQuery();
   const dispatch = useDispatch();
 
-  const res = result?.data;
+  const res =
+    results?.data?.results[
+      Math.floor(Math.random() * results?.data?.results.length - 1)
+    ];
+
+  useEffect(() => {
+    if (res && idd === "") {
+      dispatch(id(res.id));
+    }
+  }, [res]);
+
+  const { data } = useGetByIdQuery(info);
+  console.log(data);
 
   dispatch(title(data?.title || data?.original_title));
+  document.title = data?.original_title || data?.original_name || data?.name
 
   return (
     <>
@@ -24,48 +44,35 @@ function Home() {
         className="layer"
         style={{
           backgroundSize: "cover",
-          backgroundImage: `url(${base_url}${
-            data?.backdrop_path || res?.backdrop_path
-          })`,
+          backgroundImage: `url(${base_url}${data?.backdrop_path})`,
           backgroundPosition: "center center",
         }}
       ></div>
       <div className="layer_2"></div>
       <div className="home">
-        <Poster img={data?.poster_path || res?.poster_path} />
+        <Poster img={data?.poster_path || data?.profile_path } />
         <Info
           title={
             data?.original_title ||
             data?.title ||
-            res?.title ||
-            res?.original_title
+            data?.name ||
+            data?.original_name
           }
-          tagline={data?.tagline || res?.tagline}
-          overview={data?.overview || res?.overview}
+          tagline={data?.tagline}
+          overview={data?.overview || data?.biography}
           production_companies={
-            data?.production_companies.map((data) => data?.name) ||
-            res?.production_companies.map((data) => data?.name)
+            data?.production_companies &&
+            data?.production_companies.map((data) => data?.name)
           }
-          runtime={data?.runtime || res?.runtime}
-          revenue={data?.revenue || res?.revenue}
-          release_date={data?.release_date || res?.release_date}
-          vote_average={data?.vote_average || res?.vote_average}
-          genres={
-            data?.genres.map((data) => data.name) ||
-            res?.genres.map((data) => data.name)
-          }
+          runtime={data?.runtime}
+          revenue={data?.revenue}
+          release_date={data?.release_date || data?.first_air_date}
+          vote_average={data?.vote_average}
+          genres={data?.genres && data?.genres.map((data) => data.name)}
+          dob={data?.place_of_birth}
+          birthday={data?.birthday}
+          popularity={data?.popularity}
         />
-      </div>
-      <div className="fork">
-        <a
-          href="https://github.com/therogersak/movies-db-with-react-js"
-          target="_blank"
-        >
-          <img
-            src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"
-            alt="github"
-          />
-        </a>
       </div>
     </>
   );

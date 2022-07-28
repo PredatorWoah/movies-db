@@ -141,6 +141,8 @@
   .production__companies {
     font-size: 15px;
   }
+
+
 }
 
 @media (max-width: 500px) {
@@ -163,10 +165,6 @@
     font-size: 18px;
   }
 
-  .App .fork{
-    display: none
-  }
-
 }
 
 
@@ -182,9 +180,13 @@
   }
 }
 
-.fork{
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 100;
+.dash{
+  width: 10px;
+  height: 3px;
+  background: #01d277;
+  margin-top: 10px;
+}
+
+.home  .poster__img img{
+  object-fit: cover;
 }

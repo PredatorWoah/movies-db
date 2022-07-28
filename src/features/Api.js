@@ -8,18 +8,20 @@ export const moviesApi = createApi({
 
     return {
       getSearch: builder.query({
-        query: (query) => {
+        query: (info) => {
+          const { type, query } = info;
           return {
-            url: `/search/movie?query=${query}&api_key=${API_KEY}&page=1`,
+            url: `/search/${type}?query=${query}&api_key=${API_KEY}&page=1`,
             method: "GET",
           };
         },
       }),
 
       getById: builder.query({
-        query: (id) => {
+        query: (info) => {
+          const { type, id } = info;
           return {
-            url: `/movie/${id}?language=en-US&api_key=${API_KEY}`,
+            url: `/${type}/${id}?language=en-US&api_key=${API_KEY}`,
             method: "GET",
           };
         },
@@ -27,7 +29,7 @@ export const moviesApi = createApi({
 
       getTrending: builder.query({
         query: () => ({
-          url: `/movie/299537?language=en-US&api_key=${API_KEY}`,
+          url: `/trending/movie/week?api_key=${API_KEY}&language=en-US`,
           method: "GET",
         }),
       }),
@@ -35,5 +37,5 @@ export const moviesApi = createApi({
   },
 });
 
-
-export const {useGetSearchQuery , useGetByIdQuery , useGetTrendingQuery} = moviesApi;
+export const { useGetSearchQuery, useGetByIdQuery, useGetTrendingQuery } =
+  moviesApi;

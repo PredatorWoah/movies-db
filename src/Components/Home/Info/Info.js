@@ -10,9 +10,9 @@ function Info({
   vote_average,
   genres,
   runtime,
+  dob,
+  birthday,
 }) {
-  
-
   const truncate = (str, n) => {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
   };
@@ -26,31 +26,37 @@ function Info({
           </div>
           <div className="tagline">{tagline}</div>
           <div className="overview">
-            <p>{truncate(overview , 450)}</p>
+            <p>{truncate(overview, 450)}</p>
           </div>
         </div>
         <div className="info__mid">
-          <div className="genres">{genres?.join(", ")}</div>
+          <div className="genres">{genres?.join(", ") || dob}</div>
           <div className="production__companies">
-            {production_companies?.join(", ")}
+            {production_companies?.join(", ") || birthday}
           </div>
         </div>
         <div className="grid">
           <div className="grid__box">
             <span>Release Date:</span>
-            <p>{release_date}</p>
+            <p>{ release_date ?  release_date : <div className="dash"></div>}</p>
           </div>
           <div className="grid__box">
             <span>Runing Time:</span>
-            <p>{runtime} mins</p>
+            <p>{runtime ? runtime +'mins' : <div className="dash"></div>}</p>
           </div>
           <div className="grid__box">
             <span>Box Office:</span>
-            <p>{revenue?.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")}</p>
+            <p>
+              {revenue ? (
+                revenue.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")
+              ) : (
+                <div className="dash"></div>
+              )}
+            </p>
           </div>
           <div className="grid__box">
             <span>Vote Avarage:</span>
-            <p>{vote_average?.toFixed(1)} / 10</p>
+            <p>{vote_average? vote_average?.toFixed(1) + '/ 10' : <div className="dash"></div>}</p>
           </div>
         </div>
       </div>

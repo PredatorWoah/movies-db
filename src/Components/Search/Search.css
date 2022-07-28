@@ -10,6 +10,7 @@
   color: #fff;
   z-index: 1100;
   margin-left: auto;
+  padding-right: 5px;
 }
 
 .search input {
@@ -81,11 +82,19 @@
   }
 }
 
-
-
-@media (max-width: 505px) {
+@media (max-width: 450px) {
   .search input {
-    font-size: 14px;
+    font-size: 13px;
+  }
+
+  .search .select select {
+    padding: 0;
+  }
+}
+
+@media (max-width: 350px) {
+  .search .select select {
+    padding: 0;
   }
 }
 
@@ -100,4 +109,29 @@
   background: rgba(0, 0, 0, 0.568);
   width: 100%;
   height: 100vh;
+}
+
+.select select {
+  padding: 8px;
+  border-radius: 5px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-family: Lato;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.select select:focus,
+.select select:active {
+  outline: #01d277;
+  color: #01d277;
+}
+
+.select select option {
+  color: #000;
+}
+
+.select select option:hover {
+  background: #01d277;
 }
