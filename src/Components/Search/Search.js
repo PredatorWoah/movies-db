@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Search.css";
 import { useDispatch, useSelector } from "react-redux";
 import { search } from "../../features/searchSlice";
@@ -7,7 +7,6 @@ import { type } from "../../features/typeSlice";
 import { useGetSearchQuery } from "../../features/Api";
 import SearchIcon from "@mui/icons-material/Search";
 import Fade from "react-reveal/Fade";
-import Flash from 'react-reveal/Flash';
 
 function Search() {
   const [query, setQuery] = useState("");
@@ -77,6 +76,8 @@ function Search() {
                       dispatch(id(data?.id));
                       setShow(false);
                       setQuery("");
+   
+                     
                     }}
                   >
                     <span>
