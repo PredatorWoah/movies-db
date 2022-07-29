@@ -6,6 +6,8 @@ import { id } from "../../features/idSlice";
 import { type } from "../../features/typeSlice";
 import { useGetSearchQuery } from "../../features/Api";
 import SearchIcon from "@mui/icons-material/Search";
+import Fade from "react-reveal/Fade";
+import Flash from 'react-reveal/Flash';
 
 function Search() {
   const [query, setQuery] = useState("");
@@ -59,29 +61,35 @@ function Search() {
           </select>
         </div>
 
-        <div
-          className={show ? "search__results search__show" : "search__results"}
-        >
-          {results &&
-            results.map((data) => (
-              <div
-                className="search__box"
-                key={data?.id}
-                onClick={() => {
-                  dispatch(id(data?.id));
-                  setShow(false);
-                  setQuery("");
-                }}
-              >
-                <span>
-                  {data?.original_title ||
-                    data?.title ||
-                    data?.original_name ||
-                    data?.name}
-                </span>
-              </div>
-            ))}
-        </div>
+        <Fade bottom>
+          <div
+            className={
+              show ? "search__results search__show" : "search__results"
+            }
+          >
+            {results &&
+              results.map((data) => (
+                <Fade>
+                  <div
+                    className="search__box"
+                    key={data?.id}
+                    onClick={() => {
+                      dispatch(id(data?.id));
+                      setShow(false);
+                      setQuery("");
+                    }}
+                  >
+                    <span>
+                      {data?.original_title ||
+                        data?.title ||
+                        data?.original_name ||
+                        data?.name}
+                    </span>
+                  </div>
+                </Fade>
+              ))}
+          </div>
+        </Fade>
       </div>
       <div
         className={show ? "layer_3 layer__index" : "layer_3"}

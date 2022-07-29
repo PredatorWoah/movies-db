@@ -8,11 +8,13 @@ import {
   Route,
 } from "react-router-dom";
 import Header from "./Components/Header/Header";
+import Share from "./Components/Share/Share";
 
 function App() {
   return <div className="App">
   <Header />
   <Home />
+  <Share />
   </div>;
 }
 

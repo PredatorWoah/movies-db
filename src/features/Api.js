@@ -11,7 +11,7 @@ export const moviesApi = createApi({
         query: (info) => {
           const { type, query } = info;
           return {
-            url: `/search/${type}?query=${query}&api_key=${API_KEY}&page=1`,
+            url: `/search/${type}?query=${query}&api_key=${API_KEY}&page=1&language=hi-IN`,
             method: "GET",
           };
         },
@@ -29,7 +29,7 @@ export const moviesApi = createApi({
 
       getTrending: builder.query({
         query: () => ({
-          url: `/trending/movie/week?api_key=${API_KEY}&language=en-US`,
+          url: `/trending/movie/week?api_key=${API_KEY}`,
           method: "GET",
         }),
       }),
