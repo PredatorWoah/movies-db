@@ -44,7 +44,7 @@ function Search() {
         <SearchIcon />
         <input
           type="text"
-          placeholder={title ? `${title}` : "Search Movie Title"}
+          placeholder={title ? `${title}` : "Search..."}
           maxLength="50"
           value={query}
           onChange={(e) => queryHanlder(e)}
@@ -56,8 +56,6 @@ function Search() {
             <option value="movie">Movies</option>
             <option value="person">Persons</option>
             <option value="collection">Collections</option>
-            <option value="company">Company</option>
-            <option value="keyword">Keyword</option>
           </select>
         </div>
 

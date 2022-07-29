@@ -12,6 +12,7 @@ function Info({
   runtime,
   dob,
   birthday,
+  person,
 }) {
   const truncate = (str, n) => {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
@@ -35,30 +36,42 @@ function Info({
             {production_companies?.join(", ") || birthday}
           </div>
         </div>
-        <div className="grid">
-          <div className="grid__box">
-            <span>Release Date:</span>
-            <p>{ release_date ?  release_date : <div className="dash"></div>}</p>
+        {person ? (
+          <div className="dash"></div>
+        ) : (
+          <div className="grid">
+            <div className="grid__box">
+              <span>Release Date:</span>
+              <p>
+                {release_date ? release_date : <div className="dash"></div>}
+              </p>
+            </div>
+            <div className="grid__box">
+              <span>Runing Time:</span>
+              <p>{runtime ? runtime + "mins" : <div className="dash"></div>}</p>
+            </div>
+            <div className="grid__box">
+              <span>Box Office:</span>
+              <p>
+                {revenue ? (
+                  revenue.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")
+                ) : (
+                  <div className="dash"></div>
+                )}
+              </p>
+            </div>
+            <div className="grid__box">
+              <span>Vote Avarage:</span>
+              <p>
+                {vote_average ? (
+                  vote_average?.toFixed(1) + "/ 10"
+                ) : (
+                  <div className="dash"></div>
+                )}
+              </p>
+            </div>
           </div>
-          <div className="grid__box">
-            <span>Runing Time:</span>
-            <p>{runtime ? runtime +'mins' : <div className="dash"></div>}</p>
-          </div>
-          <div className="grid__box">
-            <span>Box Office:</span>
-            <p>
-              {revenue ? (
-                revenue.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")
-              ) : (
-                <div className="dash"></div>
-              )}
-            </p>
-          </div>
-          <div className="grid__box">
-            <span>Vote Avarage:</span>
-            <p>{vote_average? vote_average?.toFixed(1) + '/ 10' : <div className="dash"></div>}</p>
-          </div>
-        </div>
+        )}
       </div>
     </>
   );

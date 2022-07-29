@@ -11,7 +11,6 @@ const base_url = "https://image.tmdb.org/t/p/original";
 function Home() {
   const idd = useSelector((state) => state.id.id);
   const type = useSelector((state) => state.type.type);
-  console.log(type);
 
   const info = {
     type: type,
@@ -33,10 +32,9 @@ function Home() {
   }, [res]);
 
   const { data } = useGetByIdQuery(info);
-  console.log(data);
 
   dispatch(title(data?.title || data?.original_title));
-  document.title = data?.original_title || data?.original_name || data?.name
+  document.title = data?.original_title || data?.original_name || data?.name;
 
   return (
     <>
@@ -50,7 +48,7 @@ function Home() {
       ></div>
       <div className="layer_2"></div>
       <div className="home">
-        <Poster img={data?.poster_path || data?.profile_path } />
+        <Poster img={data?.poster_path || data?.profile_path} />
         <Info
           title={
             data?.original_title ||
@@ -72,6 +70,7 @@ function Home() {
           dob={data?.place_of_birth}
           birthday={data?.birthday}
           popularity={data?.popularity}
+          person={data?.profile_path && "person"}
         />
       </div>
     </>
