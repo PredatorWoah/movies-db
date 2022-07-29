@@ -33,6 +33,7 @@
   gap: 1rem;
   padding-left: 2.5rem;
   padding-right: 2.5rem;
+  overflow-y: scroll;
 }
 
 .layer {
@@ -190,3 +191,27 @@
 .home  .poster__img img{
   object-fit: cover;
 }
+
+.watch{
+  margin-top: 1rem;
+}
+
+.watch a{
+  width: fit-content;
+  color: #fff;
+  text-decoration: none;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: auto;
+  padding: 10px 25px;
+  text-transform: uppercase;
+  background: #01d277;
+  gap: 10px;
+  font-family: Montserrat;
+  font-weight: 700;
+  box-shadow: rgba(9, 9, 9, 0.395) 0 2px 10px;
+}
+
+

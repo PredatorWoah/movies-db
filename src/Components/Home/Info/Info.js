@@ -1,5 +1,6 @@
 import React from "react";
 import "../Home.css";
+import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
 function Info({
   tagline,
   title,
@@ -13,6 +14,7 @@ function Info({
   dob,
   birthday,
   person,
+  homepage,
 }) {
   const truncate = (str, n) => {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
@@ -32,6 +34,7 @@ function Info({
         </div>
         <div className="info__mid">
           <div className="genres">{genres?.join(", ") || dob}</div>
+
           <div className="production__companies">
             {production_companies?.join(", ") || birthday}
           </div>
@@ -72,6 +75,13 @@ function Info({
             </div>
           </div>
         )}
+        {homepage? 
+          <div className="watch">
+            <a href={`${homepage}`} target="_blank">
+              Watch <LanguageOutlinedIcon />
+            </a>
+          </div> : <div className="no"></div>
+        }
       </div>
     </>
   );
