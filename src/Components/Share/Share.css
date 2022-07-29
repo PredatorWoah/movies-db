@@ -26,6 +26,12 @@
   font-size: 25px;
 }
 
+.share__items:hover .MuiSvgIcon-root{
+    color: #01d277;
+}
+
+
+
 .share__items:hover .name{
     display: block;
     transition: .4s ease-in-out;
