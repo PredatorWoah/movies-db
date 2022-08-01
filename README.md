@@ -1,6 +1,6 @@
 <br />
 <p align="center">
-    <a href="https://twitter-48a2e.web.app/"><img src="https://github.com/therogersak/movies-db-with-react-js/blob/main/ff.png?raw=true" alt="Logo" width="100%"></a>
+    <a href="https://marvelfansofficial.com/"><img src="https://github.com/therogersak/movies-db-with-react-js/blob/main/ff.png?raw=true" alt="Logo" width="100%"></a>
 </p>
 
 
