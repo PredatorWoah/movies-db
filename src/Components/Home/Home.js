@@ -32,7 +32,6 @@ function Home() {
   }, [res]);
 
   const { data } = useGetByIdQuery(info);
-  console.log(data);
 
   dispatch(title(data?.original_title || data?.original_name || data?.name));
   document.title = data?.original_title || data?.original_name || data?.name;
@@ -73,6 +72,8 @@ function Home() {
           popularity={data?.popularity}
           person={data?.profile_path && "person"}
           homepage={data?.homepage}
+          imdb={data?.imdb_id}
+          original_language={data?.original_language}
         />
       </div>
     </>

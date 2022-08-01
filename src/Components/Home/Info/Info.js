@@ -15,6 +15,8 @@ function Info({
   birthday,
   person,
   homepage,
+  imdb,
+  original_language
 }) {
   const truncate = (str, n) => {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
@@ -29,7 +31,7 @@ function Info({
           </div>
           <div className="tagline">{tagline}</div>
           <div className="overview">
-            <p>{truncate(overview, 450)}</p>
+            <p>{truncate(overview, 400)}</p>
           </div>
         </div>
         <div className="info__mid">
@@ -73,6 +75,9 @@ function Info({
                 )}
               </p>
             </div>
+            <div className="languge">
+              {original_language}
+            </div>
           </div>
         )}
         {homepage? 
@@ -80,6 +85,7 @@ function Info({
             <a href={`${homepage}`} target="_blank">
               Watch <LanguageOutlinedIcon />
             </a>
+            <a href={`https://www.imdb.com/title/${imdb}`}>IMDB</a>
           </div> : <div className="no"></div>
         }
       </div>

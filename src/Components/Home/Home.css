@@ -194,6 +194,9 @@
 
 .watch{
   margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .watch a{
@@ -203,15 +206,32 @@
   margin-top: 5px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-right: auto;
-  padding: 10px 25px;
+  height: 50px;
+  padding: 0 25px;
   text-transform: uppercase;
   background: #01d277;
-  gap: 10px;
+  gap: 5px;
   font-family: Montserrat;
   font-weight: 700;
-  box-shadow: rgba(9, 9, 9, 0.395) 0 2px 10px;
+  box-shadow: rgba(47, 47, 47, 0.395) 0 2px 10px;
+  border-radius: 3px;
+}
+
+.watch a:nth-child(2){
+  background: #fff;
+  color: #01d277;
 }
 
 
+
+.languge{
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-transform: uppercase;
+  font-family: Montserrat;
+  font-weight: 700;
+  padding-top: 10px;
+  padding-right: 15px;
+  color: #01d277;
+}
