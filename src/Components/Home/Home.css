@@ -3,8 +3,8 @@
   max-width: 1000px;
   background: rgba(0, 0, 0, 0.5);
   height: 80vh;
-  margin: 0 auto;
   position: relative;
+  margin: 0 1rem;
   border-radius: 5px;
   display: flex;
   align-items: center;
@@ -141,6 +141,11 @@
 
   .production__companies {
     font-size: 15px;
+  }
+
+  .info .languge{
+    padding-right: 1.2rem;
+    padding-top: 0;
   }
 
 
