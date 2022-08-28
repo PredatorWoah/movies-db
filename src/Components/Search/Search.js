@@ -8,6 +8,7 @@ import { useGetSearchQuery } from "../../features/Api";
 import SearchIcon from "@mui/icons-material/Search";
 import Fade from "react-reveal/Fade";
 
+
 function Search() {
   const [query, setQuery] = useState("");
   const dispatch = useDispatch();
@@ -39,6 +40,7 @@ function Search() {
     dispatch(type(e.target.value));
   };
 
+
   return (
     <>
       <div className="search">
@@ -50,7 +52,7 @@ function Search() {
           value={query}
           onChange={(e) => queryHanlder(e)}
         />
-
+     
         <div className="select">
           <select name="type" value={typee} onChange={(e) => typeHandler(e)}>
             <option value="tv">Tv Shows</option>
@@ -76,8 +78,6 @@ function Search() {
                       dispatch(id(data?.id));
                       setShow(false);
                       setQuery("");
-   
-                     
                     }}
                   >
                     <span>

@@ -11,7 +11,7 @@ export const moviesApi = createApi({
         query: (info) => {
           const { type, query } = info;
           return {
-            url: `/search/${type}?query=${query}&api_key=${API_KEY}&page=1&language=hi-IN`,
+            url: `/search/multi?query=${query}&api_key=${API_KEY}&page=1&language=hi-IN`,
             method: "GET",
           };
         },
