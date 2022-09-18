@@ -1,21 +1,19 @@
+import React, { Suspense, lazy } from "react";
 import "./App.css";
-import Home from "./Components/Home/Home";
-import Search from "./Components/Search/Search";
-import ReactDOM from "react-dom/client";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
 import Header from "./Components/Header/Header";
-import Share from "./Components/Share/Share";
+const Share = lazy(() => import("./Components/Share/Share"));
+const Home = lazy(() => import("./Components/Home/Home"));
 
 function App() {
-  return <div className="App">
-  <Header />
-  <Home />
-  <Share />
-  </div>;
+  return (
+    <div className="App">
+      <Suspense fallback={<div>Loading...</div>}>
+        <Header />
+        <Home />
+        <Share />
+      </Suspense>
+    </div>
+  );
 }
 
 export default App;

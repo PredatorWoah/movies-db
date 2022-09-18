@@ -7,6 +7,7 @@ function Poster({ img }) {
     <>
       <div className={img ? 'poster' : 'poster poster__img'}>
         <img
+        loading="lazyY"
           src={
             img
               ? ` ${base_url}${img}`
