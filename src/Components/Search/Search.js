@@ -15,7 +15,6 @@ function Search() {
   const title = useSelector((state) => state.title.title);
   const [show, setShow] = useState(false);
   const ty = useSelector((state) => state.type.type);
-  console.log(ty);
 
   const { data } = useGetSearchQuery(searchh);
 
@@ -49,7 +48,7 @@ function Search() {
     };
   };
 
-  const handleDebounce = doMagic(queryHanlder, 300);
+  const handleDebounce = doMagic(queryHanlder, 500);
 
   return (
     <>
