@@ -8,7 +8,6 @@ import { useGetSearchQuery } from "../../features/Api";
 import SearchIcon from "@mui/icons-material/Search";
 import Fade from "react-reveal/Fade";
 
-
 function Search() {
   const [query, setQuery] = useState("");
   const dispatch = useDispatch();
@@ -27,8 +26,7 @@ function Search() {
     type: ty,
   };
 
-  const queryHanlder = (e) => {
-    setQuery(e.target.value);
+  const queryHanlder = () => {
     dispatch(search(info));
     setShow(true);
   };
@@ -40,6 +38,18 @@ function Search() {
     dispatch(type(e.target.value));
   };
 
+  const doMagic = function(func, delay) {
+    let timer;
+    return function(...args) {
+      let context = this;
+      if (timer) clearTimeout(timer);
+      timer = setTimeout(() => {
+        func.apply(context, args);
+      }, delay);
+    };
+  };
+
+  const handleDebounce = doMagic(queryHanlder, 300);
 
   return (
     <>
@@ -50,9 +60,9 @@ function Search() {
           placeholder={title ? `${title}` : "Search..."}
           maxLength="50"
           value={query}
-          onChange={(e) => queryHanlder(e)}
+          onChange={((e) => { handleDebounce(); setQuery(e.target.value);})}
         />
-     
+
         <div className="select">
           <select name="type" value={typee} onChange={(e) => typeHandler(e)}>
             <option value="tv">Tv Shows</option>
