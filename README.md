@@ -5,7 +5,7 @@
 
 
 <p align="center">
-    Movies Database homepage clone using React JS.
+    Movies Database 
     <br />
     <br />
 </p>
@@ -18,10 +18,10 @@ With the terminal available, follow the instructions below:
 
 ```bash
 # Clone the repository
-$ git clone https://github.com/therogersak/movies-db-with-react-js
+$ git clone https://github.com/therogersak/movies-db
 
-# Access the /movies-db-with-react-js folder
-$ cd /movies-db-with-react-js
+# Access the /movies-db folder
+$ cd /movies-db
 
 # Install dependencies
 $ npm install
